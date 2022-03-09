@@ -3,9 +3,10 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { styled } from '@mui/material/styles';
-import { Container, Typography} from "@mui/material";
+import {Container, TextField, Typography} from "@mui/material";
 import {Search} from "@mui/icons-material";
 import SearchIcon from '@mui/icons-material/Search';
+import {text} from "@fortawesome/fontawesome-svg-core";
 
 
 
@@ -20,7 +21,7 @@ export default function DenseAppBar() {
                             <Box>
                                 <img src='./images/Logo.svg' alt=""/>
                             </Box>
-                            <Search/>
+                            <TextField type="text"/>
 
                         </Toolbar>
                     </Container>
