@@ -3,7 +3,9 @@ import {Grid, Typography} from "@mui/material";
 import * as React from 'react';
 import {styled} from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
+import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Item = styled(Paper)(({theme}) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -17,6 +19,16 @@ const Item = styled(Paper)(({theme}) => ({
 
 }));
 
+
+ function CircularIndeterminate() {
+    return (
+        <Box sx={{ backgroundColor:"white" ,position: 'fixed',top:"0",left:"0",display:"flex",justifyContent: 'center',alignItems: 'center',minHeight:"100vh",width:"100%"}}>
+               <CircularProgress />
+        </Box>
+    );
+}
+
+
 function Categories(props) {
     const products = useSelector((state) => state.allProducts.products.results)
     console.log(products)
@@ -28,7 +40,7 @@ function Categories(props) {
 
     if (products === undefined) {
         return (
-            <h1>Loading...</h1>
+            <CircularIndeterminate/>
         )
     } else {
         return (
