@@ -32,6 +32,9 @@ const inputGlobalStyles = (mode) => (
                 alignItems:"center",
                 justifyContent:"center",
                 color:"white"
+            },
+            ".MuiPaper-elevation":{
+                backgroundColor:"white !important"
             }
 
 
